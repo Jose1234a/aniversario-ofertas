@@ -293,7 +293,7 @@
 
 
 /***MODAL INCIO */
-var modalTimeout; // Variable global para el temporizador
+var modalClosed = false; // Variable global para controlar si el modal ha sido cerrado manualmente
 
 function fadeInModal(element) {
   var opacity = 0;
@@ -321,29 +321,25 @@ function closeModal() {
     modal.style.opacity = opacity;
     if (opacity <= 0) {
       modal.style.display = 'none';
+      modalClosed = true; // Establece el estado de modalClosed como true cuando el modal se cierra manualmente
     } else {
       requestAnimationFrame(fade);
     }
   }
 
   fade();
-  
-  // Reinicia el temporizador para volver a mostrar el modal después de 2 minutos
-  clearTimeout(modalTimeout);
-  modalTimeout = setTimeout(function() {
-    fadeInModal(modal);
-  }, 120000); // 2 minutos en milisegundos
-  
 }
 
 document.addEventListener("DOMContentLoaded", function() {
   var modal = document.getElementById("modal2");
   var closeButton = document.getElementById("close");
 
-  // Mostrar el modal después de 2 segundos
-  setTimeout(function() {
-    fadeInModal(modal);
-  }, 2000);
+  // Mostrar el modal después de 2 segundos solo si modalClosed es false
+  if (!modalClosed) {
+    setTimeout(function() {
+      fadeInModal(modal);
+    }, 2000);
+  }
 
   closeButton.onclick = closeModal;
 
@@ -353,8 +349,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  // Configurar el temporizador para volver a mostrar el modal después de 2 minutos
-  modalTimeout = setTimeout(function() {
-    fadeInModal(modal);
-  }, 120000); // 2 minutos en milisegundos
+  // Configurar el temporizador para volver a mostrar el modal después de 2 minutos solo si modalClosed es false
+  if (!modalClosed) {
+    setTimeout(function() {
+      fadeInModal(modal);
+    }, 120000); // 2 minutos en milisegundos
+  }
 });
