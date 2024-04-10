@@ -356,3 +356,42 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 120000); // 2 minutos en milisegundos
   }
 });
+
+
+
+//pregutnas frecuentes//
+
+$(document).ready(function(){
+  var index = 4; // Empezamos con el cuarto acordeón, ya que tenemos 3 inicialmente
+  var maxIndex = 8; // Límite de acordeones
+
+  $(document).on('click', '.accordion-item:last-child .accordion-button', function() {
+    if (index <= maxIndex) {
+      $('#accordionExample').append('<div class="accordion-item"><h2 class="accordion-header" id="heading' + index + '"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="false" aria-controls="collapse' + index + '">Accordion Item #' + index + '</button></h2><div id="collapse' + index + '" class="accordion-collapse collapse" aria-labelledby="heading' + index + '" data-bs-parent="#accordionExample"><div class="accordion-body"><strong>This is the ' + index + ' item\'s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</div></div></div>');
+      index++;
+    }
+  });
+
+  $('.accordion-item .accordion-button').each(function(i) {
+    var collapseId = 'collapse' + (i + 1);
+    $(this).attr('data-bs-target', '#' + collapseId);
+    $(this).parent().next('.accordion-collapse').attr('id', collapseId);
+  });
+});
+
+
+
+
+
+
+
+//VISTA CUADRICULA Y LISTA//
+function verLista() {
+  const container = document.querySelector('.custom-container');
+  container.style.flexDirection = 'column';
+}
+
+function verCuadricula() {
+  const container = document.querySelector('.custom-container');
+  container.style.flexDirection = 'row';
+}
