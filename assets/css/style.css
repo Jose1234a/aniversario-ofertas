@@ -479,7 +479,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 65vh;
+  max-height: 50vh;
   background: url("../img/fondo\ aniversario.jpg") top left;
   background-size:cover;
   background-repeat: no-repeat;
@@ -500,6 +500,7 @@ h6 {
 #hero .container {
   position: relative;
   width: 40%;
+  
   justify-content: center;
   margin: auto;
   justify-self: center;
@@ -524,7 +525,7 @@ h6 {
   
 }
 #hero .container div {
-  width: 70%;
+  width: 50%;
   margin: auto;  
 }
 #hero h1 {
@@ -653,14 +654,16 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  background-color: #f1f6fe;
+  background-color: #0d58ba;
   min-height: 40px;
+  color: white;
 }
 
 .breadcrumbs h2 {
   font-size: 24px;
   font-weight: 300;
   margin: 0;
+  color: white;
 }
 
 @media (max-width: 992px) {
@@ -801,6 +804,43 @@ section {
 /*--------------------------------------------------------------
 # FIN DE PRODUCTOS CON DESCUENTO
 --------------------------------------------------------------**/
+
+/*--------------------------------------------------------------
+# PRODUCTOS CON DESCUENTO 2
+--------------------------------------------------------------**/
+
+.contenedor-de-contenedores{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contenedor-imagenes{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  align-self: center;
+  align-items: center;
+  align-content: center;  
+
+}
+.contenedor-imagen-2-con-descuento{
+  max-width: 250px;
+  max-height: 250px;
+  padding: 7px;
+}
+
+.contenedor-imagen-2-con-descuento-horizontal{
+    max-width: 600px;
+    max-height: 300px;
+}
+
+/*--------------------------------------------------------------
+# FIN DE PRODUCTOS CON DESCUENTO 2
+--------------------------------------------------------------**/
 /*--------------------------------------------------------------
 # CATEGORIAS
 --------------------------------------------------------------**/
@@ -849,6 +889,14 @@ section {
 .contendor-texto-ofertas{
   max-height: 300px;
   background-color: #0d58ba;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.contendor-texto-ofertas-20{
+  max-height: 300px;
+  margin-top: 20px;
+  background-color: #ED731E;
   display: flex;
   flex-wrap: wrap;
 
@@ -970,6 +1018,7 @@ p {
 .contenedor-imagen-1-con-descuento-categoria-hogar{
   max-width: 600px;
   max-height: 300px;
+  padding: 10px;
   
 }
 /**********************/
