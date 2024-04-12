@@ -386,12 +386,31 @@ $(document).ready(function(){
 
 
 //VISTA CUADRICULA Y LISTA//
-function verLista() {
-  const container = document.querySelector('.custom-container');
-  container.style.flexDirection = 'column';
-}
+// Función para cambiar al modo lista
+        function verLista() {
+            const container = document.querySelector('#custom-container');
+            container.classList.add('lista');
+        }
 
-function verCuadricula() {
-  const container = document.querySelector('.custom-container');
-  container.style.flexDirection = 'row';
-}
+        // Función para cambiar al modo cuadrícula
+        function verCuadricula() {
+            const container = document.querySelector('#custom-container');
+            container.classList.remove('lista');
+        }
+
+        // Función para verificar el ancho de la pantalla y establecer el modo cuadrícula si es necesario
+        function verificarAnchoPantalla() {
+            const anchoPantalla = window.innerWidth;
+            const container = document.querySelector('#custom-container');
+
+            // Establece el modo cuadrícula si la pantalla es más estrecha que un umbral (por ejemplo, 768px)
+            if (anchoPantalla <= 768) {
+                container.classList.remove('lista');
+            }
+        }
+
+        // Agregar evento de redimensionamiento de la ventana
+        window.addEventListener('resize', verificarAnchoPantalla);
+
+        // Inicializar el modo cuadrícula al cargar la página
+        verificarAnchoPantalla();

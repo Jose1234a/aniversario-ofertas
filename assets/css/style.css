@@ -842,6 +842,39 @@ section {
 # FIN DE PRODUCTOS CON DESCUENTO 2
 --------------------------------------------------------------**/
 /*--------------------------------------------------------------
+# PRODUCTOS CON DESCUENTO 3
+--------------------------------------------------------------**/
+
+.contenedor-de-contenedores-3{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contenedor-imagenes-3{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  align-self: center;
+  align-items: center;
+  align-content: center;  
+
+}
+.contenedor-imagen-3-con-descuento{
+  max-width: 300px;
+  max-height: 300px;
+  padding: 7px;
+}
+
+
+
+/*--------------------------------------------------------------
+# FIN DE PRODUCTOS CON DESCUENTO 3
+--------------------------------------------------------------**/
+/*--------------------------------------------------------------
 # CATEGORIAS
 --------------------------------------------------------------**/
 .contenedor-terciario-categorias{
@@ -979,6 +1012,11 @@ body {
   color: #000;
 }
 
+.boton-cerrar-modal{
+  color: #0056b3;
+  background-color: #000;
+}
+
 h2 {
   color: #333;
 }
@@ -1036,12 +1074,7 @@ p {
   width: 100%;
   display: flex;
   margin: auto;
-  justify-content: center;
-  justify-self: center;
-  justify-items: center;
-  align-self: center;
-  align-items: center;
-  align-content: center;
+
 }
 .segundo-contenedor-descuento-del-producto-hogar{
   top: 0;
@@ -1052,10 +1085,9 @@ p {
 
 }
 .contenedor-descuento-del-producto-hogar{
-  display: block;
-  position: relative;
-  width: 40%;
-  height: 100%;
+  width: 30%;
+  top: 0;
+
 }
 
 .contenedor-promocion-contenedor-descuento-del-producto-hogar{
@@ -1070,32 +1102,146 @@ p {
 
 
 /**************botones**********/ 
-.custom-container {
-  top: 0;
-  width: 100%;
+ /* Contenedor */
+ .custom-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
+/* Estilo de los elementos (modo cuadrícula por defecto) */
 .custom-item {
-  width: 200px;
-  height: 100px;
-  margin: 10px;
-  padding: 20px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  width: calc(25% - 10px); /* Cuatro elementos por fila en modo cuadrícula */
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  margin: 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 20px;
-  transition: all 0.3s ease;
+  justify-content: center;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+/* Sombras y cambio de color al hacer hover */
+
+
+/* Imagen */
+.item-image {
+  width: 100%; /* Imagen ocupa el 100% del ancho */
+  height: auto; /* Ajusta automáticamente la altura */
+  object-fit: cover; /* Ajustar la imagen para que se adapte al contenedor */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados */
+}
+
+/* Contenido */
+.item-content {
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+.item-content span {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  color: #686868;
+  box-sizing: border-box;
+}
+
+/* Título */
+.item-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #007BFF;
+}
+
+/* Párrafo */
+.item-content p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 15px;
+}
+.boton-modal-img{
+  width: 50%;
+}
+
+/* Modo lista */
+.custom-container.lista .custom-item {
+  width: 100%; /* Ocupa el 100% del contenedor en modo lista */
+  display: flex; /* Disposición en fila */
+  height: auto;
+  flex-direction: row; /* Cambia el diseño a fila */
+}
+
+/* Imagen en modo lista */
+.custom-container.lista button {
+  width: 30%; /* Imagen ocupa el 30% del contenedor */
+  height: auto; /* Ajusta la altura automáticamente */
+  border-radius: 8px 0 0 8px; /* Bordes redondeados */
+}
+
+/* Contenido en modo lista */
+.custom-container.lista .item-content {
+  width: 70%; /* El contenido ocupa el 70% del contenedor */
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+  /* Tres elementos por fila */
+  .custom-item {
+      width: calc(33.33% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Dos elementos por fila */
+  .custom-item {
+      width: calc(50% - 10px);
+  }
+
+  /* Ocultar los botones en pantallas pequeñas */
+  .custom-button {
+      display: none;
+  }
+
+  /* Ajustar los estilos para pantallas pequeñas */
+  .custom-container {
+      flex-direction: column; /* Pone los elementos en columna */
+  }
+
+  /* Ajustar los elementos */
+  .custom-item {
+      width: 100%; /* Ocupa todo el ancho */
+      margin: 0 0 10px 0; /* Añadir espacio entre elementos */
+  }
+
+  /* Ajustar la imagen y el contenido */
+  .custom-item .item-image,
+  .custom-item .item-content {
+      width: 100%; /* Ajustar a toda la anchura */
+      height: auto; /* Ajustar automáticamente la altura */
+  }
+
+  /* Imagenes y contenido en una fila para pantallas pequeñas */
+  .custom-container.lista .custom-item {
+      flex-direction: column;
+      height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Un elemento por fila */
+  .custom-item {
+      width: 100%; /* Ocupa todo el ancho */
+  }
+}
 .custom-button {
   padding: 10px 10px;
   font-size: 10px;
@@ -1108,7 +1254,7 @@ p {
 }
 
 .custom-button:hover {
-  background-color: #0056b3;
+  background-color: #c5c5c5;
 }
 .custom-button img {
  width: 15px;
@@ -1125,6 +1271,8 @@ p {
 .botones-contenedor-principal div span{
  margin-left: 25px;
 }
+
+
 /*--------------------------------------------------------------
 # FIN DE ESTILOS HOGAR
 --------------------------------------------------------------**/
