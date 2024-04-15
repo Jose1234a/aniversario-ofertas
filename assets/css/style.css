@@ -107,6 +107,8 @@ h6 {
   opacity: 1;
 }
 
+
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -1117,7 +1119,6 @@ p {
   box-sizing: border-box;
   overflow: hidden;
   background-color: white;
-  border: 1px solid #ccc;
   border-radius: 8px;
   margin: 5px;
   display: flex;
@@ -1136,6 +1137,11 @@ p {
   height: auto; /* Ajusta automáticamente la altura */
   object-fit: cover; /* Ajustar la imagen para que se adapte al contenedor */
   border-radius: 8px 8px 0 0; /* Bordes redondeados */
+  transition: 300ms ease;
+}
+.item-image:hover {
+opacity: 0.9;
+  scale: 1.1;
 }
 
 /* Contenido */
@@ -1143,6 +1149,8 @@ p {
   padding: 10px;
   text-align: left;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
 }
 .item-content span {
   font-size: 0.8rem;
@@ -1155,14 +1163,21 @@ p {
 /* Título */
 .item-content h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #007BFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111111;
+}
+.item-content h3:hover {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111111;
 }
 
 /* Párrafo */
 .item-content p {
   margin-top: 5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #333;
   line-height: 15px;
 }
@@ -1266,17 +1281,65 @@ p {
   text-align: end;
   align-items: end;
   align-content: end;
+  margin-bottom: 50px;
 }
 
 .botones-contenedor-principal div span{
  margin-left: 25px;
+ font-weight: 600;
 }
+
+/*lavaplatos subir**/
+.subir-lavaplatos{
+  position: fixed;
+  bottom: 280px;
+  right: 16px;
+  width: 120px;
+  background-color: #0056b3;
+  transition: 300ms ease;
+  border-radius: 20px;
+  }
+
+/*fin de lavamanos subir**/
+
+/*lavaplatos subir**/
+.subir-lavamanos{
+  position: fixed;
+  bottom: 220px;
+  right: 16px;
+  width: 120px;
+  background-color: #0056b3;
+  transition: 300ms ease;
+  }
+
+/*fin de lavamanos subir**/
+/*ducha subir**/
+.subir-ducha{
+  position: fixed;
+  bottom: 160px;
+  right: 16px;
+  width: 120px;
+  background-color: #0056b3;
+  transition: 300ms ease;
+  }
+
+/*fin de ducha subir**/
+
 
 
 /*--------------------------------------------------------------
 # FIN DE ESTILOS HOGAR
 --------------------------------------------------------------**/
+/****subir***/
+.boton-griferia-lavaplatos{
+  position: fixed;
+  width: 100px;
+  height: auto;
+  top: 15px;
+  right: 52px;
+}
 
+/*finde subir**/
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
